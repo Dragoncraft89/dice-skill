@@ -1,1 +1,1 @@
-(from (?P<Range_low>[0-9]+) to [?P<Range_high>[0-9]+]|between (?P<Range_low>[0-]+) and (?P<Range_high>[0-9]+))
+(between|from) (?P<Range>[+\-]?.+ (and|to) [+\-]?.+)
