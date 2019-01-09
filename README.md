@@ -1,5 +1,4 @@
-# <img src='https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/dice.svg' card_color='#393939' width='50' height='50' style='vertical-align:bottom'/>
- Dice
+# <img src='https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/dice.svg' card_color='#393939' width='50' height='50' style='vertical-align:bottom'/> Dice
 Generates random numbers for you
 
 ## About 
