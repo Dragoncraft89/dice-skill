@@ -1,0 +1,1 @@
+(entre|del) (?P<Range>[+\-]?.+ (y|y el|al|hasta el) [+\-]?.+)
