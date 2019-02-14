@@ -17,14 +17,16 @@ class DiceSkill(MycroftSkill):
         dice_count = 1
         dice_range = 6
 
-        if dice != 'dice':
-            split = dice.split('d')
+        split = dice.split('d')
+        try:
             dice_range = int(split[1].strip())
-            if split[0] != '':
-                try:
-                    dice_count = int(split[0].strip())
-                except:
-                    pass
+        except:
+            pass
+        if split[0] != '':
+            try:
+                dice_count = int(split[0].strip())
+            except:
+                pass
 
         numbers = [random.randint(1, dice_range) for i in range(dice_count)]
 
