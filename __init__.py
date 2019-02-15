@@ -3,31 +3,29 @@ from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import LOG
 
 import random
+import re
 
 class DiceSkill(MycroftSkill):
 
     def __init__(self):
         super(DiceSkill, self).__init__(name="DiceSkill")
 
-    @intent_handler(IntentBuilder("").require("Roll").require("Dice"))
+    @intent_handler(IntentBuilder("").require("Roll").require("DiceType"))
     def handle_roll_dice_intent(self, message):
-        dice = message.data.get('Dice')
+        utterance = message.data['utterance']
+        dice_type = message.data['DiceType']
+        utterance = utterance.replace('d' + dice_type, '')
+        dice_range = int(re.sub("[^0-9]", "", dice_type))
+        dice_count = extract_number(utterance) or 1
+        self.roll(dice_count, dice_range)
 
-        # Dice defaults
-        dice_count = 1
-        dice_range = 6
-
-        split = dice.split('d')
-        try:
-            dice_range = int(split[1].strip())
-        except:
-            pass
-        if split[0] != '':
-            try:
-                dice_count = int(split[0].strip())
-            except:
-                pass
-
+    @intent_handler(IntentBuilder("").require("Roll").require("Dice"))
+    def handle_roll_normal_intent(self, message):
+        utterance = message.data['utterance']
+        dice_count = extract_number(utterance) or 1
+        self.roll(dice_count, 6)
+    
+    def roll(self, dice_count, dice_range):
         numbers = [random.randint(1, dice_range) for i in range(dice_count)]
 
         if len(numbers) == 1:
