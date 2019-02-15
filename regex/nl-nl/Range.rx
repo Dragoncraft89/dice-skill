@@ -1,1 +1,0 @@
-(tussen|van) (?P<Range>[+\-]?.+ (en|tot) [+\-]?.+)

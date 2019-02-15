@@ -1,1 +1,0 @@
-(zwischen|von) (?P<Range>[+\-]?.+ (und|bis) [+\-]?.+)

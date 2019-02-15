@@ -1,1 +1,0 @@
-(entre|a partir de) (?P<Range>[+\-]?.+ (e|para) [+\-]?.+)
