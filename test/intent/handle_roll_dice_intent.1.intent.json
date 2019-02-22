@@ -1,0 +1,9 @@
+{
+    "expected_dialog": "multiple.result",
+    "intent": {
+        "DiceType": "d20",
+        "Roll": "roll"
+    },
+    "intent_type": "handle_roll_dice_intent",
+    "utterance": "roll 3 d20"
+}

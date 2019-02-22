@@ -1,7 +1,7 @@
 from adapt.intent import IntentBuilder
-from mycroft.skills.core import MycroftSkill, intent_handler
+from mycroft.skills.core import MycroftSkill, intent_handler, intent_file_handler
 from mycroft.util.log import LOG
-from mycroft.util.parse import extract_number
+from mycroft.util.parse import extract_number, normalize
 
 import random
 import re
@@ -34,26 +34,14 @@ class DiceSkill(MycroftSkill):
         else:
             self.speak_dialog("multiple.result", data={"result" : ', '.join([str(x) for x in numbers])})
 
-"""
-    @intent_handler(IntentBuilder("").require("Number").optionally("Range"))
+    @intent_file_handler("Range.intent")
     def handle_generate_number_intent(self, message):
-        range_input = message.data.get('Range')
-        low = 1
-        high = 10
-        
-        if range_input:
-            range_split = range_input.split(' ')
-            
-            low = int(range_split[0])
-            high = int(range_split[2])
-        else:
-            self.speak_dialog("range.needed")
-            return
+        low = extract_number(message.data.get('low'))
+        high = extract_number(message.data.get('high'))
         
         if low > high:
             low, high = high, low
         self.speak_dialog("single.result", data={"result" : random.randint(low, high)})
-"""
 
 def create_skill():
     return DiceSkill()

@@ -1,0 +1,9 @@
+{
+    "expected_dialog": "multiple.result",
+    "intent": {
+        "Dice": "dice",
+        "Roll": "roll"
+    },
+    "intent_type": "handle_roll_normal_intent",
+    "utterance": "roll 3 dice"
+}

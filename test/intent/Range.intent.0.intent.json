@@ -1,0 +1,9 @@
+{
+    "expected_dialog": "single.result",
+    "intent": {
+        "high": "10",
+        "low": "0"
+    },
+    "intent_type": "Range.intent",
+    "utterance": "Generate a random number between 0 and 10"
+}
