@@ -10,7 +10,7 @@ Perfect whenever you need to generate a random number, but don't have a dice nea
 ## Examples 
 * "roll a dice"
 * "roll a d20"
-* "generate a random number between -5 and 5"
+* "generate a random number between 0 and 5"
 
 ## Credits 
 @Dragoncraft89
