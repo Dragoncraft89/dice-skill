@@ -1,9 +1,9 @@
 {
     "expected_dialog": "single.result",
     "intent": {
-        "DiceType": "d6",
-        "Roll": "roll"
+        "count": "a",
+        "type": "6"
     },
-    "intent_type": "handle_roll_dice_intent",
+    "intent_type": "Dice.intent",
     "utterance": "roll a d6"
 }

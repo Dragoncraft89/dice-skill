@@ -11,24 +11,23 @@ class DiceSkill(MycroftSkill):
     def __init__(self):
         super(DiceSkill, self).__init__(name="DiceSkill")
 
-    @intent_handler(IntentBuilder("").require("Roll").require("DiceType").optionally("Modificator"))
+    @intent_file_handler("Dice.intent")
     def handle_roll_dice_intent(self, message):
-        utterance = message.data['utterance']
-        dice_type = message.data['DiceType']
-        modificator = 0
-        if 'Modificator' in message.data:
-            modificator = int(message.data['Modificator'].replace(' ', ''))
-        utterance = utterance.replace(dice_type, '')
-        dice_range = int(re.sub("[^0-9]", "", dice_type))
-        dice_count = extract_number(utterance) or 1
-        self.roll(int(dice_count), dice_range, modificator)
+        dice_count = extract_number(message.data.get('count')) or 1
+        dice_type = message.data.get('type')
+        modificator = message.data.get('modifier')
+        if modificator:
+            modificator = modificator.replace(' ', '')
+        else:
+            modificator = 0
 
-    @intent_handler(IntentBuilder("").require("Roll").require("Dice"))
+        self.roll(dice_count, int(dice_type), int(modificator))
+
+    @intent_file_handler("NormalDice.intent")
     def handle_roll_normal_intent(self, message):
-        utterance = message.data['utterance']
-        dice_count = extract_number(utterance) or 1
-        self.roll(int(dice_count), 6, 0)
-    
+        dice_count = extract_number(message.data.get('count'))  or 1
+        self.roll(dice_count, 6, 0)
+            
     def roll(self, dice_count, dice_range, modificator):
         numbers = [random.randint(1, dice_range) + modificator for i in range(dice_count)]
 
