@@ -11,23 +11,26 @@ class DiceSkill(MycroftSkill):
     def __init__(self):
         super(DiceSkill, self).__init__(name="DiceSkill")
 
-    @intent_handler(IntentBuilder("").require("Roll").require("DiceType"))
+    @intent_handler(IntentBuilder("").require("Roll").require("DiceType").optionally("Modificator"))
     def handle_roll_dice_intent(self, message):
         utterance = message.data['utterance']
         dice_type = message.data['DiceType']
+        modificator = 0
+        if 'Modificator' in message.data:
+            modificator = int(message.data['Modificator'].replace(' ', ''))
         utterance = utterance.replace(dice_type, '')
         dice_range = int(re.sub("[^0-9]", "", dice_type))
         dice_count = extract_number(utterance) or 1
-        self.roll(int(dice_count), dice_range)
+        self.roll(int(dice_count), dice_range, modificator)
 
     @intent_handler(IntentBuilder("").require("Roll").require("Dice"))
     def handle_roll_normal_intent(self, message):
         utterance = message.data['utterance']
         dice_count = extract_number(utterance) or 1
-        self.roll(int(dice_count), 6)
+        self.roll(int(dice_count), 6, 0)
     
-    def roll(self, dice_count, dice_range):
-        numbers = [random.randint(1, dice_range) for i in range(dice_count)]
+    def roll(self, dice_count, dice_range, modificator):
+        numbers = [random.randint(1, dice_range) + modificator for i in range(dice_count)]
 
         if len(numbers) == 1:
             self.speak_dialog("single.result", data={"result" : numbers[0]})
