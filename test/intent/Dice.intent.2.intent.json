@@ -2,7 +2,7 @@
     "expected_dialog": "multiple.result",
     "intent": {
         "count": "3",
-        "modifier": "+ 5",
+        "modifier": "5",
         "type": "20"
     },
     "intent_type": "Dice.intent",
