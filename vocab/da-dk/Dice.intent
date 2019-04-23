@@ -1,1 +1,1 @@
-rul ({count}|) d {type} ({modifier}|)
+rul ({count}|) d {type} {+|} ({modifier}|)

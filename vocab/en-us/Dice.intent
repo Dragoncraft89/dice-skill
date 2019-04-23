@@ -1,1 +1,1 @@
-roll ({count}|) d {type} ({modifier}|)
+roll ({count}|) d {type} (+|plus|) ({modifier}|)

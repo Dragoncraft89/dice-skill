@@ -1,1 +1,1 @@
-wirf ({count}|) w {type} ({modifier}|)
+wirf ({count}|) w {type} {+|plus|} ({modifier}|)

@@ -15,11 +15,7 @@ class DiceSkill(MycroftSkill):
     def handle_roll_dice_intent(self, message):
         dice_count = extract_number(message.data.get('count')) or 1
         dice_type = message.data.get('type')
-        modificator = message.data.get('modifier')
-        if modificator:
-            modificator = modificator.replace(' ', '')
-        else:
-            modificator = 0
+        modificator = extract_number(message.data.get('modifier') or "0")
 
         self.roll(dice_count, int(dice_type), int(modificator))
 
