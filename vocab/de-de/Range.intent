@@ -1,4 +1,4 @@
-Gib mir eine Zahl von {low} bis {high}
-Gib mir eine Zahl zwischen {low} und {high}
-Sag mir eine Zahl von {low} bis {high}
-Sag mir eine Zahl zwischen {low} und {high}
+Erzeuge eine zufällige Zahl von {low} bis {high}
+Erzeuge eine zufällige Zahl zwischen {low} und {high}
+Nenne mir eine Zahl von {low} und {high}
+Nenne mir eine Zahl zwischen {low} und {high}
