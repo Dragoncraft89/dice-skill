@@ -15,9 +15,11 @@ class DiceSkill(MycroftSkill):
     def handle_roll_dice_intent(self, message):
         dice_count = extract_number(message.data.get('count')) or 1
         dice_type = message.data.get('type')
-        modificator = extract_number(message.data.get('modifier') or "0")
+        modificator = message.data.get('modifier')
+        if modificator:
+            modificator = int(extract_number(modificator))
 
-        self.roll(dice_count, int(dice_type), int(modificator))
+        self.roll(dice_count, int(dice_type), modificator)
 
     @intent_file_handler("NormalDice.intent")
     def handle_roll_normal_intent(self, message):
@@ -25,7 +27,10 @@ class DiceSkill(MycroftSkill):
         self.roll(dice_count, 6, 0)
             
     def roll(self, dice_count, dice_range, modificator):
-        numbers = [random.randint(1, dice_range) + modificator for i in range(dice_count)]
+        if modificator:
+            numbers = [sum([random.randint(1, dice_range) for i in range(dice_count)]) + modificator]
+        else:
+            numbers = [random.randint(1, dice_range) for i in range(dice_count)]
 
         if len(numbers) == 1:
             self.speak_dialog("single.result", data={"result" : numbers[0]})
