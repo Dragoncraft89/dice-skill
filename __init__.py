@@ -27,15 +27,18 @@ class DiceSkill(MycroftSkill):
         self.roll(dice_count, 6, 0)
             
     def roll(self, dice_count, dice_range, modificator):
+        numbers = [random.randint(1, dice_range) for i in range(dice_count)]
         if modificator:
-            numbers = [sum([random.randint(1, dice_range) for i in range(dice_count)]) + modificator]
+            total = sum(numbers) + modificator
+            if len(numbers) == 1:
+                self.speak_dialog("single.modificator.result" , data={"result" : numbers[0], "total" : total})
+            else:
+                self.speak_dialog("multiple.modificator.result", data={"result" : ', '.join([str(x) for x in numbers]), "total": total})
         else:
-            numbers = [random.randint(1, dice_range) for i in range(dice_count)]
-
-        if len(numbers) == 1:
-            self.speak_dialog("single.result", data={"result" : numbers[0]})
-        else:
-            self.speak_dialog("multiple.result", data={"result" : ', '.join([str(x) for x in numbers])})
+            if len(numbers) == 1:
+                self.speak_dialog("single.result", data={"result" : numbers[0]})
+            else:
+                self.speak_dialog("multiple.result", data={"result" : ', '.join([str(x) for x in numbers])})
 
     @intent_file_handler("Range.intent")
     def handle_generate_number_intent(self, message):
