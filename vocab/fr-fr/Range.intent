@@ -1,4 +1,4 @@
-Génère un nombre aléatoire entre {low} et {high}
-Génère un nombre aléatoire entre {low} et {high}
-Donne-moi un nombre entre {low} et {high}
-Dis-moi un nombre entre {low} et {high}
+(Génère|Donne-moi|Propose) un nombre (aléatoire|au hasard) (compris|) entre {low} et {high}
+(Génère|Produit|Donne) un nombre (aléatoire|au hasard|quelconque) (compris|) entre {low} et {high}
+(Donne-moi|propose|donne) un nombre (compris|) entre {low} et {high}
+(Dis-moi|Donne moi|Donne|Trouve) un nombre (compris|) entre {low} et {high}
