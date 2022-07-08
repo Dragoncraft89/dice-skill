@@ -1,0 +1,6 @@
+bota {count} dado (eta gehitu|eta emaitzari gehitu) {modifier}
+bota (dadoak|dadoa|dado bat) (eta gehitu|eta emaitzari gehitu) {modifier}
+bota {count} dado {type} aurpegikoak (eta gehitu|eta emaitzari gehitu|) ({modifier}|)
+bota {type} aurpegiko {count} dado (eta gehitu|eta emaitzari gehitu|) ({modifier}|)
+bota (dadoa|dado bat) {type} aurpegikoa (eta gehitu|eta emaitzari gehitu|) ({modifier}|)
+bota {type} aurpegiko (dadoa|dado bat) (eta gehitu|eta emaitzari gehitu|) ({modifier}|)

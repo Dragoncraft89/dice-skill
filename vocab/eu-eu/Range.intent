@@ -1,0 +1,8 @@
+(nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu) {low} eta {high} (arteko|bitarteko|tarteko) (ausazko|) zenbaki bat (ausaz|ausazkoa|)
+{low} eta {high} (arteko|bitarteko|tarteko) (ausazko|) zenbaki bat (ausaz|ausazkoa|) (nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu)
+(nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu) (ausazko|) zenbaki bat (ausaz|ausazkoa|) {low} eta {high} (artean|artekoa|bitartean|bitartekoa|tartean|tartekoa)
+(ausazko|) zenbaki bat (ausaz|ausazkoa|) {low} eta {high} (artean|artekoa|bitartean|bitartekoa|tartean|tartekoa) (nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu)
+(nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu) {low}(tik|etik|retik) {high}(ra|era|rera|rako|erako|rerako) (ausazko|) zenbaki bat (ausaz|ausazkoa|)
+{low}(tik|etik|retik) {high}(ra|era|rera|rako|erako|rerako) (ausazko|) zenbaki bat (ausaz|ausazkoa|) (nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu)
+(nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu) (ausazko|) zenbaki bat (ausaz|ausazkoa|) {low}(tik|etik|retik) {high}(ra|era|rera|rakoa|erakoa|rerakoa)
+(ausazko|) zenbaki bat (ausaz|ausazkoa|) {low}(tik|etik|retik) {high}(ra|era|rera|rakoa|erakoa|rerakoa) (nahi dut|sortu|sortuidazu|sortu egidazu|eman|emaidazu|emadazu|esan|esaidazu|esadazu)

@@ -13,8 +13,9 @@ class DiceSkill(MycroftSkill):
 
     @intent_file_handler("Dice.intent")
     def handle_roll_dice_intent(self, message):
-        dice_count = int(extract_number(message.data.get('count'))) or 1
-        dice_type = message.data.get('type')
+        dice_count = message.data.get('count') or "1"
+        dice_count = int(extract_number(dice_count))
+        dice_type = message.data.get('type') or "6"
         modificator = message.data.get('modifier')
         if modificator:
             modificator = int(extract_number(modificator))
@@ -23,8 +24,9 @@ class DiceSkill(MycroftSkill):
 
     @intent_file_handler("NormalDice.intent")
     def handle_roll_normal_intent(self, message):
-        dice_count = int(extract_number(message.data.get('count')))  or 1
-        self.roll(dice_count, 6, 0)
+        dice_count = message.data.get('count') or "1"
+        dice_count = int(extract_number(dice_count))
+        self.roll(dice_count, 6, None)
             
     def roll(self, dice_count, dice_range, modificator):
         numbers = [random.randint(1, dice_range) for i in range(dice_count)]
