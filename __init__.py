@@ -1,12 +1,20 @@
+# TODO: Remove unused OVOS imports
+from ovos_workshop.decorators import intent_handler
+from ovos_workshop.skills import OVOSSkill
+from ovos_utils.intents import IntentBuilder
+from ovos_bus_client.message import Message
 from adapt.intent import IntentBuilder
-from mycroft.skills.core import MycroftSkill, intent_handler, intent_file_handler
-from mycroft.util.log import LOG
-from mycroft.util.parse import extract_number, normalize
+# TODO: Remove all Mycroft imports
+# from mycroft.skills.core import MycroftSkill, intent_handler, intent_file_handler
+# TODO: Remove all Mycroft imports
+# from mycroft.util.log import LOG
+# TODO: Remove all Mycroft imports
+# from mycroft.util.parse import extract_number, normalize
 
 import random
 import re
 
-class DiceSkill(MycroftSkill):
+class DiceSkill(OVOSSkill):
 
     def __init__(self):
         super(DiceSkill, self).__init__(name="DiceSkill")
@@ -51,5 +59,6 @@ class DiceSkill(MycroftSkill):
             low, high = high, low
         self.speak_dialog("single.result", data={"result" : random.randint(low, high)})
 
+# TODO: Remove create_skill() function
 def create_skill():
     return DiceSkill()
