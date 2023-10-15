@@ -1,5 +1,10 @@
 {
   "type": "@mikejgray/ovos-skill-projen.OVOSSkillProject",
   "name": "dice-skill",
-  "retrofit": true
+  "retrofit": true,
+  "repositoryUrl": "https://github.com/mikejgray/dice-skill",
+  "skillClass": "DiceSkill",
+  "author": "@dragoncraft89",
+  "authorAddress": "",
+  "license": "GPL-3.0"
 }

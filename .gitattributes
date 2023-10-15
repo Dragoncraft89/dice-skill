@@ -13,6 +13,4 @@
 /.projen/deps.json linguist-generated
 /.projen/files.json linguist-generated
 /.projen/tasks.json linguist-generated
-/requirements.txt linguist-generated
 /setup.py linguist-generated
-/version.py linguist-generated

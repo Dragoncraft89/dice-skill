@@ -1,5 +1,1 @@
-ovos-utils
-ovos-bus-client
-ovos-workshop
-# Your requirements here
-
+ovos_lingua_franca
